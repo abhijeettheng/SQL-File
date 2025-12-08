@@ -1,0 +1,4 @@
+Q1.
+[BASIC] You have an Employees table with columns: employee_id, first_name, salary, and hire_date. Write a SQL query to retrieve the first_name and salary of all employees who were hired after January 1, 2024, and order the results by salary in descending order.
+ANS
+SELECT first_name, salary FROM Employees WHERE hire_date > '2024-01-01' ORDER BY salary DESC;
