@@ -1,12 +1,24 @@
 CREATE DATABASE college;
 USE college;
 
-CREATE TABLE Student(
+CREATE TABLE student(
 	rollno INT PRIMARY KEY,
     name VARCHAR (50),
     marks INT NOT NULL,
     grade VARCHAR (1),
     city VARCHAR (20)
+);
+
+CREATE TABLE dept(
+	id INT PRIMARY KEY,
+    name VARCHAR(50),
+);
+
+CREATE TABLE teacher(
+	id INT PRIMARY KEY,
+    name VARCHAR(50),
+    dept_id INT,
+    FOREIGN KEY (dept_id) REFERENCES dept(id)
 );
 
 INSERT INTO student
@@ -18,3 +30,12 @@ VALUES
 (104,"dhruv",96,"A","Delhi"),
 (105,"emanuel",12,"F","Delhi"),
 (106,"farah",82,"B","Delhi");
+
+SELECT DISTINCT  city FROM student;
+
+SET SQL_SAFE_UPDATES = 0;
+
+UPDATE student
+SET marks = marks + 1;
+
+SELECT * FROM student;
